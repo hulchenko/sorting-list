@@ -10,6 +10,11 @@ const sortedBands = bands.sort(function(a, b) { //#1 alphabetizing list
         return -1;
     }
     ///OR ternary operator///
-    //return strip(a)>strip(b) ? 1 : -1;
+    //const sortedBands  = bands.sort((a,b)=> strip(a) > strip(b) ? 1 : -1);
 });
+
+document.querySelector("#bands").innerHTML = //#3 selecting ul id bands, since it's an array and not a string, innerHTML will apply .toString() function to the array by default, causing commas to be part of the list. To remove commas we will add .join("") function at the end of this function, to change the whole array to one big string without commas.
+sortedBands //selecting existing function
+    .map(band => `<li>${band}</li>`) //map through the ban array
+        .join("");
 console.log(sortedBands);
